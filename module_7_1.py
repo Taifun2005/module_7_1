@@ -1,5 +1,5 @@
-from pprint import pprint
-from tkinter.font import names
+# from pprint import pprint
+# from tkinter.font import names
 
 
 # «R»-это чтение от слова «read»,
@@ -44,10 +44,10 @@ class Shop:
             if str(product) not in current_products:
                 file.write(str(product) + '\n')
                 current_products += str(product) + '\n'
-                file.close()
+    # file.close()
             else:
-                print(f'Продукт {self.name} уже есть в магазине.')
-                file.close()
+                print(f'Продукт {product} уже есть в магазине.')
+        file.close()
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
