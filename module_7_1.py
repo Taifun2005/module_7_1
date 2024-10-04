@@ -32,24 +32,22 @@ class Shop:
 
     def get_products(self):
         # name = file1.txt
-        file = open(__file_name, 'r')
-        s = pprint(file.read())
+        file = open(self.__file_name, 'r')
+        s = file.read()
         file.close()
         return s
 
     def add(self, *products):
-        file = open(__file_name, 'a')
-        if self.*products in file:
-            file.write(products)
-            file.close()
-        else:
-            print(f'Продукт {self.name} уже есть в магазине.')
-            file.close()
-
-
-
-
-
+        current_products = self.get_products()
+        file = open(self.__file_name, 'a')
+        for product in products:
+            if str(product) not in current_products:
+                file.write(str(product) + '\n')
+                current_products += str(product) + '\n'
+                file.close()
+            else:
+                print(f'Продукт {self.name} уже есть в магазине.')
+                file.close()
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
